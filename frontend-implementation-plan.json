@@ -1,0 +1,146 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Romantic Theme, Inline Read More, and Open Public Letters Access",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Apply a romantic visual theme across the entire application with warm rose/blush/cream/gold color palette, elegant serif/script typography, and subtle heart/floral decorative accents",
+      "acceptanceCriteria": [
+        "All pages use a warm rose/blush/gold color palette with no default blue or grey dominance",
+        "Headings use an elegant serif or script font",
+        "Subtle heart or floral decorative accents appear in at least the header and Public Letters page",
+        "Theme is consistent across all pages and components including navigation and cards"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update the Tailwind theme configuration to use a romantic color palette. Replace primary/secondary colors with rose (#f43f5e, #fda4af), blush (#fce7f3), cream (#fef3c7), and gold (#fbbf24) shades. Add a serif font family (e.g., Playfair Display, Crimson Text) and a script font family (e.g., Dancing Script) to the theme.fontFamily configuration for use in headings."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update the global CSS variables and Tailwind base layers to implement the romantic theme. Replace all color CSS variables (--primary, --secondary, --background, --foreground, etc.) with romantic palette values using HSL format (rose, blush, cream, gold tones). Import Google Fonts for the selected serif and script fonts. Add base styles for headings (h1-h6) to use the romantic serif/script fonts. Add utility classes for heart/floral decorative elements using CSS pseudo-elements or background patterns."
+        },
+        {
+          "path": "frontend/src/components/layout/AppShell.tsx",
+          "operation": "modify",
+          "description": "Update the AppShell header and navigation to use the romantic theme styling. Change background colors to use cream/blush tones. Update text colors to rose/gold. Add subtle heart or floral SVG icons or decorative elements in the header (e.g., small heart icon next to the app title, floral border accent). Ensure navigation links use the romantic color scheme with rose hover states. Update mobile navigation drawer styling to match the romantic theme."
+        },
+        {
+          "path": "frontend/src/components/letters/LetterCard.tsx",
+          "operation": "modify",
+          "description": "Update LetterCard component styling to use the romantic theme. Apply cream/blush background with rose/gold borders and subtle shadow. Use serif font for the title. Add a decorative heart or floral icon/accent to the card (e.g., corner decoration or divider). Update text colors to warm tones. Ensure hover states use rose/gold highlights. Maintain readability while applying the theme consistently."
+        },
+        {
+          "path": "frontend/src/pages/PublicFeedPage.tsx",
+          "operation": "modify",
+          "description": "Update PublicFeedPage styling to use the romantic theme. Apply warm background colors (cream/blush gradient). Use serif/script fonts for the page heading. Add decorative heart or floral accents to the page header section. Ensure the page title and any empty state messages use the romantic typography and colors. Update loading states to use rose/gold color scheme."
+        },
+        {
+          "path": "frontend/src/pages/LetterEditorPage.tsx",
+          "operation": "modify",
+          "description": "Update LetterEditorPage styling to use the romantic theme. Apply cream/blush background tones. Use serif font for title input styling cues. Update button colors to rose/gold with appropriate hover states. Ensure form inputs have warm borders (rose/gold) and backgrounds (cream). Add subtle decorative accents if space allows."
+        },
+        {
+          "path": "frontend/src/pages/MyLettersPage.tsx",
+          "operation": "modify",
+          "description": "Update MyLettersPage styling to use the romantic theme. Apply warm background colors and update section headings to use serif/script fonts. Ensure buttons and cards use the rose/blush/gold color scheme. Update empty state messages styling to match the romantic theme."
+        },
+        {
+          "path": "frontend/src/pages/SettingsPartnerPage.tsx",
+          "operation": "modify",
+          "description": "Update SettingsPartnerPage styling to use the romantic theme. Apply cream/blush backgrounds, rose/gold buttons, and warm input border colors. Use serif font for headings. Ensure error and success messages use romantic color tones."
+        },
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "modify",
+          "description": "Update LoginButton styling to use the romantic theme. Change button background to rose with gold hover state for login, and cream with rose text for logout. Ensure disabled state uses muted romantic colors."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetupDialog.tsx",
+          "operation": "modify",
+          "description": "Update ProfileSetupDialog styling to use the romantic theme. Apply cream/blush dialog background, rose/gold button colors, warm input borders, and serif font for the dialog heading."
+        },
+        {
+          "path": "frontend/src/components/letters/VisibilityBadge.tsx",
+          "operation": "modify",
+          "description": "Update VisibilityBadge styling to use the romantic theme. Change badge colors to rose/gold for public and blush/cream for private, ensuring contrast and readability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Remove all access restrictions on the Public Letters page so any visitor can view, read, write, and submit public letters without authentication",
+      "acceptanceCriteria": [
+        "The Public Letters page is fully accessible without logging in",
+        "Any visitor can read all public letters without authentication",
+        "Any visitor can write and submit a public letter without authentication",
+        "No login prompt or RequireAuth guard blocks access to the public letters read, write, or submit flows",
+        "Backend allows anonymous principals to submit and read public letters"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Remove any RequireAuth wrapper or authentication guard from the PublicFeedPage route. Ensure the route is accessible to all visitors (authenticated and unauthenticated). If the route is currently wrapped with RequireAuth, unwrap it or conditionally apply RequireAuth only to routes that require authentication (e.g., MyLettersPage, SettingsPartnerPage)."
+        },
+        {
+          "path": "frontend/src/pages/PublicFeedPage.tsx",
+          "operation": "modify",
+          "description": "Remove any authentication checks or RequireAuth guards from the PublicFeedPage component. Ensure the useGetPublicFeed query hook works for both authenticated and unauthenticated users (anonymous principals). Update any UI logic that conditionally shows content based on authentication to always show public letters. Add a prominent 'Write a Public Letter' button or link that is visible to all visitors and navigates to the letter editor for public letters."
+        },
+        {
+          "path": "frontend/src/pages/LetterEditorPage.tsx",
+          "operation": "modify",
+          "description": "Remove or conditionally apply authentication guards only for private letters. For public letters (when visibility is public), allow unauthenticated users to access the editor, write content, and submit. Update the publish letter mutation to work for anonymous principals when submitting public letters. Ensure the visibility selector defaults to or is locked to 'public' for unauthenticated users. If the user is authenticated, allow them to choose visibility; if unauthenticated, only allow public visibility. Add UI messaging to clarify that unauthenticated users can only submit public letters."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Update the usePublishLetter mutation to handle anonymous principals. Ensure the actor call to publishLetter works when the identity is anonymous (guest). Remove any frontend checks that prevent guests from calling publishLetter for public letters. Ensure useGetPublicFeed works for anonymous users without throwing errors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add inline 'Read More' expansion to each public letter card allowing full letter body to expand and collapse within the same page",
+      "acceptanceCriteria": [
+        "Each public letter card shows a truncated preview with a 'Read More' button/link",
+        "Clicking 'Read More' expands the full letter body inline on the same page without navigating away",
+        "A 'Read Less' or collapse option is visible after expansion to collapse the letter back to preview",
+        "Expansion and collapse are animated smoothly (e.g., fade or slide)",
+        "Works for all accounts including unauthenticated visitors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/letters/LetterCard.tsx",
+          "operation": "modify",
+          "description": "Add inline expand/collapse functionality to LetterCard. Introduce a local state (e.g., useState for isExpanded). Display a truncated preview of the letter body (e.g., first 150 characters) by default. Add a 'Read More' button/link that toggles isExpanded to true, revealing the full letter body inline within the card. When expanded, show a 'Read Less' button that collapses the body back to the preview. Use CSS transitions or Tailwind transition utilities for smooth expand/collapse animations (e.g., max-height transition or opacity fade). Ensure the card layout adjusts gracefully when expanded. Remove or conditionally hide any navigation behavior (onClick for full-page letter view) when in expand mode, or make 'Read More' the primary action."
+        },
+        {
+          "path": "frontend/src/pages/PublicFeedPage.tsx",
+          "operation": "modify",
+          "description": "Ensure PublicFeedPage renders LetterCard components with the new inline expand/collapse functionality enabled. Remove any click handlers or navigation logic that would take users to a separate letter detail page when they click on a letter card. Let the inline expand/collapse be the primary interaction for reading letters on this page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Generate and render a romantic hero background image for the Public Letters page featuring soft rose petals, warm bokeh lights, and blush/gold gradient",
+      "acceptanceCriteria": [
+        "A romantic hero background image is displayed on the Public Letters page",
+        "The image uses soft rose petals, warm bokeh/glow, and blush/gold tones",
+        "Image is served from frontend/public/assets/generated/ as a static asset"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PublicFeedPage.tsx",
+          "operation": "modify",
+          "description": "Add a hero section at the top of the PublicFeedPage that uses the generated romantic hero background image. Reference the image at the workspace file path frontend/public/assets/generated/romantic-hero.dim_1440x600.png. Apply the image as a background using CSS (background-image) or an <img> tag within a hero container. Ensure the hero section has appropriate height (e.g., 400-600px) and overlays or text are readable against the background. Position the page heading and any introductory text over the hero background with appropriate contrast (e.g., text shadow, semi-transparent overlay)."
+        }
+      ]
+    }
+  ]
+}

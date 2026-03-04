@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A romantic couples' app for the user and their girlfriend to write and read heartfelt public letters to each other. Features a romantic theme (soft/warm colors, elegant typography) and a Public Letters page open to everyone with no restrictions on reading, writing, or submitting.",
+  "architectural_notes": [
+    "Public letters are fully public — no authentication required to read, write, or submit"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Soft romantic background with blush pink rose petals scattered on a warm cream and gold bokeh background, gentle warm light glows (romantic-hero.dim_1440x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-apply-a-romantic-visual-theme-across-the-entire-application-use-a-warm-color-palette-rose-blush-cream-gold-elegant-serif-or-script-typography-for-headings-and-subtle-heart-floral-decorative-accents-update-global-css-variables-tailwind-config-and-all-page-component-styles-to-reflect-this-theme-consistently",
+      "title": "Apply a romantic visual theme across the entire application: use a warm color palette (rose, blush, cream, gold), elegant serif or script typography for headings, and subtle heart/floral decorative accents. Update global CSS variables, Tailwind config, and all page/component styles to reflect this theme consistently.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-access-restrictions-on-the-public-letters-page-any-visitor-authenticated-or-unauthenticated-must-be-able-to-view-read-write-and-submit-public-letters-without-needing-to-log-in-remove-any-authentication-guards-or-requireauth-wrappers-from-the-public-letters-route-and-the-letter-submission-write-flow-for-public-letters",
+      "title": "Remove all access restrictions on the Public Letters page: any visitor (authenticated or unauthenticated) must be able to view, read, write, and submit public letters without needing to log in. Remove any authentication guards or RequireAuth wrappers from the Public Letters route and the letter submission/write flow for public letters.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-inline-read-more-expansion-to-each-letter-card-on-the-public-letters-page-when-a-user-clicks-read-more-the-full-letter-body-expands-inline-within-the-same-page-without-navigation-a-read-less-collapse-control-should-also-be-shown-to-collapse-the-content-back",
+      "title": "Add an inline 'Read More' expansion to each letter card on the Public Letters page. When a user clicks 'Read More', the full letter body expands inline within the same page without navigation. A 'Read Less' / collapse control should also be shown to collapse the content back.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-render-a-romantic-hero-background-image-for-the-public-letters-page-featuring-soft-rose-petals-warm-bokeh-lights-and-a-blush-gold-gradient-place-the-generated-image-as-a-static-asset-at-frontend-public-assets-generated-romantic-hero-png-and-use-it-as-the-hero-background-on-the-public-letters-page",
+      "title": "Generate and render a romantic hero background image for the Public Letters page featuring soft rose petals, warm bokeh lights, and a blush/gold gradient. Place the generated image as a static asset at frontend/public/assets/generated/romantic-hero.png and use it as the hero background on the Public Letters page.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Romantic theme with soft warm colors (rose, blush, gold), elegant typography, and heart/floral accents",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Public Letters page open to all accounts and unauthenticated visitors with no restrictions on reading, writing, or submitting",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Inline 'Read More' expansion on Public Letters page to reveal full letter content without navigating away",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Letters App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

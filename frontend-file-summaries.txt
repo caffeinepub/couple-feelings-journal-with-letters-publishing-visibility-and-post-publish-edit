@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main app with TanStack Router; editor route is now open to all visitors (no RequireAuth), while My Letters and Settings remain auth-protected.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profiles, partner management, draft/published letter CRUD operations, public feed, and relationship letters with proper cache invalidation.",
+  "frontend/src/components/auth/LoginButton.tsx": "Login/logout button with romantic rose color scheme matching the new theme.",
+  "frontend/src/components/auth/RequireAuth.tsx": "Authentication guard wrapper component that displays an access-denied card with login prompt for unauthenticated users while allowing authenticated users to access protected content.",
+  "frontend/src/components/auth/ProfileSetupDialog.tsx": "Profile setup dialog with romantic styling, heart icon, Playfair Display heading, and rose-tinted button.",
+  "frontend/src/components/layout/AppShell.tsx": "Romantic-themed layout shell with Dancing Script logo, rose-tinted header/footer borders, heart accent in user greeting (fixed conflicting text-sm/text-base classes — now uses only font-script text-base), and a \"Write\" nav link visible to all users.",
+  "frontend/src/components/letters/LetterCard.tsx": "Letter card with romantic styling (rose borders, heart accents, Playfair Display font) and inline Read More/Read Less expand-collapse functionality with smooth max-height transition.",
+  "frontend/src/components/letters/VisibilityBadge.tsx": "Visibility badge with romantic rose styling for public letters and muted styling for private letters.",
+  "frontend/src/pages/PublicFeedPage.tsx": "Public feed page with a full-width romantic hero image section, script-font heading, decorative hearts, Write a Letter CTA, and letter cards with inline Read More enabled for all visitors.",
+  "frontend/src/pages/MyLettersPage.tsx": "My Letters dashboard with romantic rose/blush styling, heart icons, and italic serif typography throughout.",
+  "frontend/src/pages/LetterEditorPage.tsx": "Letter editor open to all users (authenticated and guests); guests see a notice that their letter will be public, draft saving and visibility selector are shown only to authenticated users.",
+  "frontend/src/pages/SettingsPartnerPage.tsx": "Partner settings page with romantic rose styling, heart accents, and warm blush card backgrounds.",
+  "frontend/src/utils/principal.ts": "Utility functions for parsing and validating Principal IDs from text input with user-friendly error messages.",
+  "frontend/src/index.css": "Global styles with a romantic OKLCH color palette (deep rose primary, blush secondary, warm gold accent), imports Playfair Display serif, Dancing Script cursive, and Lato sans-serif fonts, and defines romantic gradient and hero overlay utility classes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with romantic color tokens, Playfair Display/Dancing Script/Lato font families, custom romantic/paper box shadows, and a fade-in keyframe animation."
+}

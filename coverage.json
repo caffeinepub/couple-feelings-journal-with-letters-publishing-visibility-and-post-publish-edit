@@ -1,0 +1,118 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T18:41:36.449Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 4,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Apply a romantic visual theme across the entire application: use a warm color palette (rose, blush, cream, gold), elegant serif or script typography for headings, and subtle heart/floral decorative accents. Update global CSS variables, Tailwind config, and all page/component styles to reflect this theme consistently.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/components/layout/AppShell.tsx",
+          "frontend/src/components/letters/LetterCard.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx",
+          "frontend/src/pages/LetterEditorPage.tsx",
+          "frontend/src/pages/MyLettersPage.tsx",
+          "frontend/src/pages/SettingsPartnerPage.tsx",
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/components/auth/ProfileSetupDialog.tsx",
+          "frontend/src/components/letters/VisibilityBadge.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/components/layout/AppShell.tsx",
+          "frontend/src/components/letters/LetterCard.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx",
+          "frontend/src/pages/LetterEditorPage.tsx",
+          "frontend/src/pages/MyLettersPage.tsx",
+          "frontend/src/pages/SettingsPartnerPage.tsx",
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/components/auth/ProfileSetupDialog.tsx",
+          "frontend/src/components/letters/VisibilityBadge.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Remove all access restrictions on the Public Letters page: any visitor (authenticated or unauthenticated) must be able to view, read, write, and submit public letters without needing to log in. Remove any authentication guards or RequireAuth wrappers from the Public Letters route and the letter submission/write flow for public letters.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx",
+          "frontend/src/pages/LetterEditorPage.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx",
+          "frontend/src/pages/LetterEditorPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Add an inline 'Read More' expansion to each letter card on the Public Letters page. When a user clicks 'Read More', the full letter body expands inline within the same page without navigation. A 'Read Less' / collapse control should also be shown to collapse the content back.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/letters/LetterCard.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/letters/LetterCard.tsx",
+          "frontend/src/pages/PublicFeedPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Generate and render a romantic hero background image for the Public Letters page featuring soft rose petals, warm bokeh lights, and a blush/gold gradient. Place the generated image as a static asset at frontend/public/assets/generated/romantic-hero.png and use it as the hero background on the Public Letters page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/PublicFeedPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/PublicFeedPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/romantic-hero.dim_1440x600.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.ts",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/auth/ProfileSetupDialog.tsx",
+    "frontend/src/components/layout/AppShell.tsx",
+    "frontend/src/components/letters/LetterCard.tsx",
+    "frontend/src/components/letters/VisibilityBadge.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/index.css",
+    "frontend/src/pages/LetterEditorPage.tsx",
+    "frontend/src/pages/MyLettersPage.tsx",
+    "frontend/src/pages/PublicFeedPage.tsx",
+    "frontend/src/pages/SettingsPartnerPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

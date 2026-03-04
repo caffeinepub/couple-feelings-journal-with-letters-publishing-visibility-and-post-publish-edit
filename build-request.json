@@ -1,0 +1,101 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Theme, Inline Read More, and Open Public Letters Access",
+  "projectName": "Love Letters",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Apply a romantic visual theme across the entire application: use a warm color palette (rose, blush, cream, gold), elegant serif or script typography for headings, and subtle heart/floral decorative accents. Update global CSS variables, Tailwind config, and all page/component styles to reflect this theme consistently.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "Make it a Romantic Theme"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages use a warm rose/blush/gold color palette with no default blue or grey dominance",
+        "Headings use an elegant serif or script font",
+        "Subtle heart or floral decorative accents appear in at least the header and Public Letters page",
+        "Theme is consistent across all pages and components including navigation and cards"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Remove all access restrictions on the Public Letters page: any visitor (authenticated or unauthenticated) must be able to view, read, write, and submit public letters without needing to log in. Remove any authentication guards or RequireAuth wrappers from the Public Letters route and the letter submission/write flow for public letters.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "No Restriction On Who Can Write, Read Or Submit Public Letters"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Public Letters page is fully accessible without logging in",
+        "Any visitor can read all public letters without authentication",
+        "Any visitor can write and submit a public letter without authentication",
+        "No login prompt or RequireAuth guard blocks access to the public letters read, write, or submit flows",
+        "Backend allows anonymous principals to submit and read public letters"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add an inline 'Read More' expansion to each letter card on the Public Letters page. When a user clicks 'Read More', the full letter body expands inline within the same page without navigation. A 'Read Less' / collapse control should also be shown to collapse the content back.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "Clicking Read More Should Expand The Letter Inline"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each public letter card shows a truncated preview with a 'Read More' button/link",
+        "Clicking 'Read More' expands the full letter body inline on the same page without navigating away",
+        "A 'Read Less' or collapse option is visible after expansion to collapse the letter back to preview",
+        "Expansion and collapse are animated smoothly (e.g., fade or slide)",
+        "Works for all accounts including unauthenticated visitors"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Generate and render a romantic hero background image for the Public Letters page featuring soft rose petals, warm bokeh lights, and a blush/gold gradient. Place the generated image as a static asset at frontend/public/assets/generated/romantic-hero.png and use it as the hero background on the Public Letters page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-8"
+        ],
+        "quotes": [
+          "Make it a Romantic Theme"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A romantic hero background image is displayed on the Public Letters page",
+        "The image uses soft rose petals, warm bokeh/glow, and blush/gold tones",
+        "Image is served from frontend/public/assets/generated/ as a static asset"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "Keep all Motoko backend logic in a single actor in backend/main.mo"
+  ],
+  "nonGoals": [
+    "Private or partner-only letter features are not in scope for this request",
+    "User authentication flow changes beyond removing guards on public letters",
+    "Any real-time or WebSocket features",
+    "Mobile app or native app changes"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Soft romantic background with blush pink rose petals scattered on a warm cream and gold bokeh background, gentle warm light glows (romantic-hero.dim_1440x600.png)"
+    ],
+    "edits": []
+  }
+}
