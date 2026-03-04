@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+
+        /* Romantic light theme — rose, blush, warm cream */
+        --background: 0.98 0.012 15;
+        --foreground: 0.22 0.04 15;
+
+        --card: 0.97 0.018 12;
+        --card-foreground: 0.22 0.04 15;
+
+        --popover: 0.97 0.018 12;
+        --popover-foreground: 0.22 0.04 15;
+
+        --primary: 0.52 0.2 10;
+        --primary-foreground: 0.98 0.005 10;
+
+        --secondary: 0.93 0.045 15;
+        --secondary-foreground: 0.38 0.1 15;
+
+        --muted: 0.94 0.025 12;
+        --muted-foreground: 0.55 0.06 15;
+
+        --accent: 0.88 0.08 60;
+        --accent-foreground: 0.3 0.08 30;
+
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+
+        --border: 0.88 0.04 12;
+        --input: 0.88 0.04 12;
+        --ring: 0.62 0.18 10;
+
+        --chart-1: 0.62 0.2 10;
+        --chart-2: 0.75 0.15 60;
+        --chart-3: 0.55 0.12 330;
+        --chart-4: 0.7 0.18 25;
+        --chart-5: 0.65 0.16 350;
+
+        --sidebar: 0.95 0.025 12;
+        --sidebar-foreground: 0.22 0.04 15;
+        --sidebar-primary: 0.52 0.2 10;
+        --sidebar-primary-foreground: 0.98 0.005 10;
+        --sidebar-accent: 0.91 0.05 15;
+        --sidebar-accent-foreground: 0.38 0.1 15;
+        --sidebar-border: 0.88 0.04 12;
+        --sidebar-ring: 0.62 0.18 10;
+    }
+
+    .dark {
+        /* Romantic dark theme — deep burgundy, soft rose glow */
+        --background: 0.14 0.04 15;
+        --foreground: 0.96 0.015 10;
+
+        --card: 0.18 0.05 15;
+        --card-foreground: 0.96 0.015 10;
+
+        --popover: 0.21 0.05 15;
+        --popover-foreground: 0.96 0.015 10;
+
+        --primary: 0.78 0.14 10;
+        --primary-foreground: 0.16 0.04 15;
+
+        --secondary: 0.24 0.06 15;
+        --secondary-foreground: 0.92 0.02 10;
+
+        --muted: 0.24 0.05 15;
+        --muted-foreground: 0.65 0.07 15;
+
+        --accent: 0.75 0.1 55;
+        --accent-foreground: 0.14 0.04 15;
+
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.14 0.04 15;
+
+        --border: 1 0 0 / 12%;
+        --input: 1 0 0 / 16%;
+        --ring: 0.68 0.14 10;
+
+        --chart-1: 0.78 0.18 10;
+        --chart-2: 0.72 0.14 55;
+        --chart-3: 0.65 0.16 330;
+        --chart-4: 0.68 0.18 25;
+        --chart-5: 0.62 0.15 350;
+
+        --sidebar: 0.18 0.05 15;
+        --sidebar-foreground: 0.96 0.015 10;
+        --sidebar-primary: 0.78 0.14 10;
+        --sidebar-primary-foreground: 0.16 0.04 15;
+        --sidebar-accent: 0.24 0.06 15;
+        --sidebar-accent-foreground: 0.92 0.02 10;
+        --sidebar-border: 1 0 0 / 12%;
+        --sidebar-ring: 0.68 0.14 10;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}

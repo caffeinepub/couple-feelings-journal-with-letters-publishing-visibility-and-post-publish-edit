@@ -1,0 +1,239 @@
+/* ── Self-hosted fonts ─────────────────────────────────────────────── */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay[wght].woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay-Italic[wght].woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/assets/fonts/CrimsonPro[wght].woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/assets/fonts/CrimsonPro-Italic[wght].woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces[SOFT,WONK,opsz,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* ── Romantic Light Palette (rose / blush / warm parchment / gold) ── */
+
+    /* Parchment background — warm cream */
+    --background: 0.975 0.018 60;
+    /* Deep burgundy text */
+    --foreground: 0.2 0.055 20;
+
+    /* Card — softer warm ivory */
+    --card: 0.99 0.01 45;
+    --card-foreground: 0.2 0.055 20;
+
+    /* Popover */
+    --popover: 0.99 0.01 45;
+    --popover-foreground: 0.2 0.055 20;
+
+    /* Primary — deep rose */
+    --primary: 0.48 0.22 12;
+    --primary-foreground: 0.99 0.005 30;
+
+    /* Secondary — warm blush */
+    --secondary: 0.93 0.055 18;
+    --secondary-foreground: 0.38 0.09 18;
+
+    /* Muted — pale rose-cream */
+    --muted: 0.955 0.03 25;
+    --muted-foreground: 0.5 0.065 22;
+
+    /* Accent — antique gold */
+    --accent: 0.84 0.1 70;
+    --accent-foreground: 0.28 0.07 35;
+
+    /* Destructive */
+    --destructive: 0.48 0.24 27;
+    --destructive-foreground: 0.99 0.005 30;
+
+    /* Borders and inputs */
+    --border: 0.87 0.048 18;
+    --input: 0.91 0.035 18;
+    --ring: 0.48 0.22 12;
+
+    /* Chart colors — warm rose spectrum */
+    --chart-1: 0.58 0.22 12;
+    --chart-2: 0.68 0.17 32;
+    --chart-3: 0.55 0.14 55;
+    --chart-4: 0.74 0.2 22;
+    --chart-5: 0.63 0.24 8;
+
+    /* Sidebar */
+    --sidebar: 0.97 0.018 20;
+    --sidebar-foreground: 0.2 0.055 20;
+    --sidebar-primary: 0.48 0.22 12;
+    --sidebar-primary-foreground: 0.99 0.005 30;
+    --sidebar-accent: 0.93 0.055 18;
+    --sidebar-accent-foreground: 0.38 0.09 18;
+    --sidebar-border: 0.87 0.048 18;
+    --sidebar-ring: 0.48 0.22 12;
+  }
+
+  .dark {
+    /* ── Romantic Dark — deep wine / burgundy / rose gold ── */
+
+    /* Deep wine background */
+    --background: 0.13 0.04 18;
+    /* Soft parchment text */
+    --foreground: 0.95 0.022 30;
+
+    /* Card — slightly lighter wine */
+    --card: 0.17 0.042 18;
+    --card-foreground: 0.95 0.022 30;
+
+    --popover: 0.17 0.042 18;
+    --popover-foreground: 0.95 0.022 30;
+
+    /* Primary — rose gold */
+    --primary: 0.76 0.2 12;
+    --primary-foreground: 0.13 0.04 18;
+
+    /* Secondary */
+    --secondary: 0.23 0.05 18;
+    --secondary-foreground: 0.88 0.022 30;
+
+    --muted: 0.22 0.048 18;
+    --muted-foreground: 0.62 0.06 25;
+
+    /* Accent — warm gold */
+    --accent: 0.72 0.14 62;
+    --accent-foreground: 0.13 0.04 18;
+
+    --destructive: 0.56 0.24 27;
+    --destructive-foreground: 0.95 0.022 30;
+
+    --border: 0.28 0.055 18;
+    --input: 0.27 0.05 18;
+    --ring: 0.76 0.2 12;
+
+    --chart-1: 0.65 0.22 12;
+    --chart-2: 0.7 0.17 32;
+    --chart-3: 0.6 0.14 55;
+    --chart-4: 0.75 0.2 22;
+    --chart-5: 0.68 0.24 8;
+
+    --sidebar: 0.17 0.042 18;
+    --sidebar-foreground: 0.95 0.022 30;
+    --sidebar-primary: 0.76 0.2 12;
+    --sidebar-primary-foreground: 0.13 0.04 18;
+    --sidebar-accent: 0.23 0.05 18;
+    --sidebar-accent-foreground: 0.88 0.022 30;
+    --sidebar-border: 0.28 0.055 18;
+    --sidebar-ring: 0.76 0.2 12;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", Georgia, serif;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .font-script {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-variation-settings: "SOFT" 100, "WONK" 0;
+  }
+
+  .font-body {
+    font-family: "Crimson Pro", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Warm parchment gradient — light mode hero tint */
+  .romantic-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.97 0.035 22) 0%,
+      oklch(0.985 0.02 45) 50%,
+      oklch(0.96 0.05 14) 100%
+    );
+  }
+
+  /* Hero image darkening overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.14 0.055 16 / 0.42) 0%,
+      oklch(0.1 0.04 14 / 0.62) 100%
+    );
+  }
+
+  /* Subtle parchment texture overlay */
+  .parchment-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* Decorative gold shimmer line */
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.84 0.1 70 / 0.5) 30%,
+      oklch(0.9 0.12 65 / 0.8) 50%,
+      oklch(0.84 0.1 70 / 0.5) 70%,
+      transparent 100%
+    );
+  }
+}
